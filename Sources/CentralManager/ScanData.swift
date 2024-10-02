@@ -11,4 +11,10 @@ public struct ScanData: Sendable {
     /// The current RSSI of the peripheral, in dBm. A value of 127 is reserved and indicates the RSSI
     /// was not available.
     public let rssi: NSNumber
+    
+    public init(peripheral: Peripheral, advertisementData: [String : any Sendable], rssi: NSNumber) {
+        self.peripheral = peripheral
+        self.advertisementData = advertisementData
+        self.rssi = rssi
+    }
 }
